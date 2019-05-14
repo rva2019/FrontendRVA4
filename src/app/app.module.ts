@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { VoziloComponent } from './components/primer-components/vozilo/vozilo.component';
 import { AutomobilComponent } from './components/primer-components/automobil/automobil.component';
-import { MatButtonModule, MatIconModule, MatListModule, MatGridListModule, MatSidenavModule, MatExpansionModule, MatTableModule, MatToolbarModule, MatSelectModule } from '@angular/material';
+import { MatButtonModule, MatIconModule, MatListModule, MatGridListModule, MatSidenavModule, MatExpansionModule, MatTableModule, MatToolbarModule, MatSelectModule, MatSnackBar, MatSnackBarModule, MatDialogModule, MatInputModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ArtiklComponent } from './components/artikl/artikl.component';
 import { DobavljacComponent } from './components/dobavljac/dobavljac.component';
@@ -16,6 +16,8 @@ import { AuthorComponent } from './components/core/author/author.component';
 import { HomeComponent } from './components/core/home/home.component'
 import { HttpClientModule } from '@angular/common/http';
 import { ArtiklService } from './services/artikl.service';
+import { ArtiklDialogComponent } from './components/dialogs/artikl-dialog/artikl-dialog.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { ArtiklService } from './services/artikl.service';
     StavkaPorudzbineComponent,
     HelpComponent,
     AuthorComponent,
-    HomeComponent
+    HomeComponent,
+    ArtiklDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -43,9 +46,14 @@ import { ArtiklService } from './services/artikl.service';
     MatTableModule,
     MatToolbarModule,
     MatSelectModule,
+    MatSnackBarModule,
+    MatDialogModule,
+    MatInputModule,
+    FormsModule,
     HttpClientModule
 
   ],
+  entryComponents: [ArtiklDialogComponent],
   providers: [ArtiklService],
   bootstrap: [AppComponent]
 })
