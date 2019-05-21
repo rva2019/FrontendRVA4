@@ -28,11 +28,12 @@ export class PorudzbinaComponent implements OnInit {
  public openDialog(flag: number, id: number, datum: Date, isporuceno: Date, placeno: boolean, iznos: number, dobavljac: Dobavljac ) {
    const dialogRef = this.dialog.open(PorudzbinaDialogComponent, { data: { id: id, datum: datum, isporuceno: isporuceno, placeno: placeno, iznos: iznos, dobavljacBean: dobavljac  } });
    dialogRef.componentInstance.flag = flag;
-   console.log("objekat? "+dobavljac);
 
    dialogRef.afterClosed().subscribe(result => {
-     if (result == 1)
-       this.loadData();
+     if (result == 1){ 
+        this.loadData();
+     }
+       
    });
  }
 }

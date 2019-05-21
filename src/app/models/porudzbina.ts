@@ -6,5 +6,5 @@ export class Porudzbina {
     isporuceno: Date;
     placeno: boolean;
     iznos: number;
-    dobavljac: Dobavljac;
+    dobavljacBean: Dobavljac;
    }

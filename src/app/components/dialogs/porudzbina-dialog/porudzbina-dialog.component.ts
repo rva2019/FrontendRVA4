@@ -33,7 +33,7 @@ export class PorudzbinaDialogComponent implements OnInit {
    return a.id == b.id;
  }
  onChange(dobavljac) {
-   this.data.dobavljac = dobavljac;
+   this.data.dobavljacBean = dobavljac;
  }
 
  public add(): void {
