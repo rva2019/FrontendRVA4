@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { VoziloComponent } from './components/primer-components/vozilo/vozilo.component';
 import { AutomobilComponent } from './components/primer-components/automobil/automobil.component';
-import { MatButtonModule, MatIconModule, MatListModule, MatGridListModule, MatSidenavModule, MatExpansionModule, MatTableModule, MatToolbarModule, MatSelectModule, MatSnackBar, MatSnackBarModule, MatDialogModule, MatInputModule } from '@angular/material';
+import { MatButtonModule, MatIconModule, MatListModule, MatGridListModule, MatSidenavModule, MatExpansionModule, MatTableModule, MatToolbarModule, MatSelectModule, MatSnackBar, MatSnackBarModule, MatDialogModule, MatInputModule, MatCheckboxModule, MatDatepickerModule, MatNativeDateModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ArtiklComponent } from './components/artikl/artikl.component';
 import { DobavljacComponent } from './components/dobavljac/dobavljac.component';
@@ -18,6 +18,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { ArtiklService } from './services/artikl.service';
 import { ArtiklDialogComponent } from './components/dialogs/artikl-dialog/artikl-dialog.component';
 import { FormsModule } from '@angular/forms';
+import { DobavljacDialogComponent } from './components/dialogs/dobavljac-dialog/dobavljac-dialog.component';
+import { DobavljacService } from './services/dobavljac.service';
+import { PorudzbinaDialogComponent } from './components/dialogs/porudzbina-dialog/porudzbina-dialog.component';
+import { PorudzbinaService } from './services/porudzbina.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +35,9 @@ import { FormsModule } from '@angular/forms';
     HelpComponent,
     AuthorComponent,
     HomeComponent,
-    ArtiklDialogComponent
+    ArtiklDialogComponent,
+    DobavljacDialogComponent,
+    PorudzbinaDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -50,11 +56,13 @@ import { FormsModule } from '@angular/forms';
     MatDialogModule,
     MatInputModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatCheckboxModule, MatNativeDateModule, MatDatepickerModule,
+
 
   ],
-  entryComponents: [ArtiklDialogComponent],
-  providers: [ArtiklService],
+  entryComponents: [ArtiklDialogComponent, DobavljacDialogComponent, PorudzbinaDialogComponent],
+  providers: [ArtiklService, DobavljacService, PorudzbinaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
