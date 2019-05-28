@@ -6,7 +6,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable()
 export class DobavljacService {
-    private readonly API_URL = 'http://localhost:8083/dobavljac/';
+    private readonly API_URL = 'https://rvabackend.herokuapp.com/dobavljac/';
     //private readonly API_URL = 'http://localhost:8080/backend/dobavljac/';
     dataChange: BehaviorSubject<Dobavljac[]> = new BehaviorSubject<Dobavljac[]>([]);
 

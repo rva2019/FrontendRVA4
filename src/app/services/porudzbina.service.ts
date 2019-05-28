@@ -6,7 +6,7 @@ import { Observable } from "rxjs";
 
 @Injectable()
 export class PorudzbinaService {
-   private readonly API_URL = 'http://localhost:8083/porudzbina/';
+   private readonly API_URL = 'https://rvabackend.herokuapp.com/porudzbina/';
 
    dataChange: BehaviorSubject<Porudzbina[]> = new BehaviorSubject<Porudzbina[]>([]);
    

@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class ArtiklService{
-    private readonly API_URL = 'http://localhost:8083/artikl/';
+    private readonly API_URL = 'https://rvabackend.herokuapp.com/artikl/';
 
     dataChange: BehaviorSubject<Artikl[]> = new BehaviorSubject<Artikl[]>([]);
     
