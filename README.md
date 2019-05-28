@@ -1,3 +1,5 @@
+## Aplikaciji se može pristupiti na https://rva2019.github.io/FrontendRVA4
+
 ## Preuzimanje projekta
 
 Ukoliko nije instaliran, potrebno je instalirati [Git](https://git-scm.com/download/win) na računaru.
