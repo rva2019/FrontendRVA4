@@ -32,10 +32,7 @@ export class PorudzbinaDialogComponent implements OnInit {
  compareTo(a, b) {
    return a.id == b.id;
  }
- onChange(dobavljac) {
-   this.data.dobavljacBean = dobavljac;
- }
-
+ 
  public add(): void {
    this.data.id = -1;
    this.porudzbinaService.addPorudzbina(this.data);

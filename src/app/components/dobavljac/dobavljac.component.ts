@@ -14,6 +14,9 @@ export class DobavljacComponent implements OnInit {
   displayedColumns = ['id', 'adresa', 'naziv', 'kontakt', 'actions'];
   dataSource: MatTableDataSource<Dobavljac>;
 
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
+
 
   constructor(public dobavljacService: DobavljacService, public dialog: MatDialog) { }
 
@@ -22,10 +25,13 @@ export class DobavljacComponent implements OnInit {
   }
 
   public loadData() {
-    this.dobavljacService.getAllDobavljac().subscribe(data => {
+    this.dobavljacService.getAllDobavljac().subscribe(data =>{
       this.dataSource = new MatTableDataSource(data);
+
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
     });
-  }
+}
 
   public openDialog(flag: number, id: number, adresa: string, naziv: string, kontakt: string) {
     const dialogRef = this.dialog.open(DobavljacDialogComponent, { data: { id: id, adresa: adresa, naziv: naziv, kontakt: kontakt } });
@@ -34,5 +40,11 @@ export class DobavljacComponent implements OnInit {
       if (result == 1)
         this.loadData();
     });
+  }
+
+  applyFilter(filterValue: string){
+    filterValue = filterValue.trim();
+    filterValue = filterValue.toLocaleLowerCase();
+    this.dataSource.filter = filterValue;
   }
 }

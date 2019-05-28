@@ -32,9 +32,7 @@ export class ArtiklComponent implements OnInit {
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
     });
-
-
-  }
+}
 
   public openDialog(flag: number, id: number, naziv: string, proizvodjac: string){
     const dialogRef = this.dialog.open(ArtiklDialogComponent,
