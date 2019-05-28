@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { VoziloComponent } from './components/primer-components/vozilo/vozilo.component';
 import { AutomobilComponent } from './components/primer-components/automobil/automobil.component';
-import { MatButtonModule, MatIconModule, MatListModule, MatGridListModule, MatSidenavModule, MatExpansionModule, MatTableModule, MatToolbarModule, MatSelectModule, MatSnackBar, MatSnackBarModule, MatDialogModule, MatInputModule, MatCheckboxModule, MatDatepickerModule, MatNativeDateModule } from '@angular/material';
+import { MatButtonModule, MatIconModule, MatListModule, MatGridListModule, MatSidenavModule, MatExpansionModule, MatTableModule, MatToolbarModule, MatSelectModule, MatSnackBar, MatSnackBarModule, MatDialogModule, MatInputModule, MatCheckboxModule, MatDatepickerModule, MatNativeDateModule, MatPaginatorModule, MatSortModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ArtiklComponent } from './components/artikl/artikl.component';
 import { DobavljacComponent } from './components/dobavljac/dobavljac.component';
@@ -22,6 +22,8 @@ import { DobavljacDialogComponent } from './components/dialogs/dobavljac-dialog/
 import { DobavljacService } from './services/dobavljac.service';
 import { PorudzbinaDialogComponent } from './components/dialogs/porudzbina-dialog/porudzbina-dialog.component';
 import { PorudzbinaService } from './services/porudzbina.service';
+import { StavkaPorudzbineDialogComponent } from './components/dialogs/stavka-porudzbine-dialog/stavka-porudzbine-dialog.component';
+import { StavkaPorudzbineService } from './services/stavka-porudzbine.service';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,8 @@ import { PorudzbinaService } from './services/porudzbina.service';
     HomeComponent,
     ArtiklDialogComponent,
     DobavljacDialogComponent,
-    PorudzbinaDialogComponent
+    PorudzbinaDialogComponent,
+    StavkaPorudzbineDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -58,11 +61,11 @@ import { PorudzbinaService } from './services/porudzbina.service';
     FormsModule,
     HttpClientModule,
     MatCheckboxModule, MatNativeDateModule, MatDatepickerModule,
-
+    MatPaginatorModule, MatSortModule
 
   ],
-  entryComponents: [ArtiklDialogComponent, DobavljacDialogComponent, PorudzbinaDialogComponent],
-  providers: [ArtiklService, DobavljacService, PorudzbinaService],
+  entryComponents: [ArtiklDialogComponent, DobavljacDialogComponent, PorudzbinaDialogComponent, StavkaPorudzbineDialogComponent],
+  providers: [ArtiklService, DobavljacService, PorudzbinaService, StavkaPorudzbineService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

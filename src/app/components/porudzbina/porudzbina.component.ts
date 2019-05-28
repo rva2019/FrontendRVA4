@@ -14,6 +14,7 @@ import { PorudzbinaDialogComponent } from '../dialogs/porudzbina-dialog/porudzbi
 export class PorudzbinaComponent implements OnInit {
  displayedColumns = ['id', 'datum', 'isporuceno', 'iznos', 'placeno', 'dobavljac', 'actions'];
  dataSource: Observable<Porudzbina[]>;
+ selektovanaPorudzbina: Porudzbina;
 
  constructor(public porudzbinaService: PorudzbinaService, public dialog: MatDialog) { }
 
@@ -35,5 +36,9 @@ export class PorudzbinaComponent implements OnInit {
      }
        
    });
+ }
+
+ selectRow(row){
+  this.selektovanaPorudzbina = row;
  }
 }
